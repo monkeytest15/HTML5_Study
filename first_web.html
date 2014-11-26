@@ -12,5 +12,69 @@
 		<textarea name = memo id = memo required ></textarea><br/>
 		<input type=submit>
 	</form>
+	<form id = "testform">
+		<input name = "range1" type=range min = 0 max=100 step=5 />
+		<output onforminput = "value = range1.value">50</output>
+	</form>
+	<script language="javascript">
+		function check()
+		{
+			var email = document.getElementById("email");
+			if(email.value ==""){
+				alert("pls input email address");
+				return false;
+			}
+			else if (!email.checkValidity())
+				alert("pls input email address");
+			else
+				alert("你输入的地址有效");
+		}
+	</script>
+	<form id = testform1 onsubmit="return check()">
+		<label for =email>Email</label>
+		<input name= email id=email type=email /><br/>
+		<input type=submit>
+	</form>
+	<title>figure 元素实例</title>
+	<figure>
+		<img src="1.png" alt="代码">
+	</figure>
+	<details>
+		<summary>testtest</summary>
+		<p>这个是一个主题标注</p>
+	</details>
+	<title>progress</title>
+	<script>
+		var progressBar = document.getElementById('p');
+		function button_onclick()
+		{
+			var progressBar = document.getElementById('p');
+			progressBar.getElementsByTagName('span')[0].textContent="0";
+			for(var i =0;i<=100;i++)
+			updateProgress(i);
+
+		}
+		function updateProgress(newValue){
+			var progressBar = document.getElementById('p');
+			progressBar.value = newValue;
+			progressBar.getElementsByTagName('span')[0].textContent = newValue;
+		}
+	</script>
+	<section>
+		<h2>progress sample</h2>
+		<p>per:<progress id = "p" max = 100><span>30</span>%</progress></p>
+		<input type = "button" onclick="button_onclick()" value="请点击"
+	</section>
+	<dl>
+		<dt>作者</dt>
+		<dt>出版社</dt>
+		<dd>清华大学</dd>
+	</dl>
+	<title>canvas</title>
+	<script type = "text/javascript" src = "script.js" charset="gb2312"></script>
 </head>
+<body onload="draw('canvas');">
+<h1>canvas display</h1>
+<canvas id = "canvas" width="400" height="300"/>
+</body>
 		</html>
